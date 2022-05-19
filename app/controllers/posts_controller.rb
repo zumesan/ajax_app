@@ -8,7 +8,7 @@ class PostsController < ApplicationController #application_controllerを継承
   #end
 
   def create
-    Post.create(content: params[:content]) #保温
-    redirect_to action: :index #保存後にトップページへリダイレクトする。
+    post = Post.create(content: params[:content]) #保存
+    render json:{ post: post } #jsonオプションで変数postの値をpost:キーとセットで JavaScriptファイルに返却
   end
 end
