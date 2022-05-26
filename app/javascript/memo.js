@@ -23,7 +23,7 @@ function post(){ //関数定義
     XHR.responseType = "json"; //データフォーマットをJSONに指定する
     XHR.send(formData); //引数に要素を入れてリクエストを送信
     XHR.onload = () => { //リクエストの送信に成功したときに、下記の処理を実施
-      if (XHR.status != 200){ //200番台以外の
+      if (XHR.status != 200){ //返り値が200番台以外だった場合
         alert(`Error ${XHR.status}: ${XHR.statusText}`);//エラーメッセージの表示
         return null; //JavaScriptから抜け出す
       }
